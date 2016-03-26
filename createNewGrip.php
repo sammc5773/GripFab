@@ -1,5 +1,10 @@
 <html lang="en">
+<!--
 
+This page allows users to choose a base from the pre-existing list of base options. These are all located in the directory called "gripBases"
+- Sam 
+3/21/15
+-->
 <head>
 	<meta charset="utf-8">
 	<title>GripFab</title>
@@ -35,41 +40,47 @@
 	     		</div><!-- /.navbar-collapse -->
 	  		</div><!-- /.container-fluid -->
 		</nav>
+		<!--Main body-->
+		<div class = "container">
+				<div id = "numFiles" style="display: none;">
+					<?php 
+						
+					    // gets the numbers of files that are in the gripBase repository file. This should be the number of total buttons that appear
+					    $i = 0; 
+					    $dir = 'gripBases';
+					    if($handle = opendir($dir)) 
+					    {
+					        while(($file = readdir($handle)) !== false)
+					        {
+					            if (!in_array($file, array('.', '..')) && !is_dir($dir.$file)) 
+					                $i++;
+					        }
+					    }
+					    // prints out how many were in the directory
+					    echo "$i";
+					?>
+				</div> 
 
-		<p> Number of Files in the Repository: <div id = "numFiles">
-		<?php 
-			
-		    // gets the numbers of files that are in the gripBase repository file. This should be the number of total buttons that appear
-		    $i = 0; 
-		    $dir = 'gripBases';
-		    if ($handle = opendir($dir)) {
-		        while (($file = readdir($handle)) !== false){
-		            if (!in_array($file, array('.', '..')) && !is_dir($dir.$file)) 
-		                $i++;
-		        }
-		    }
-		    // prints out how many were in the directory
-		    echo "$i";
-		?>
-	</div> 
-		</p>
 
-		<div class = "invisibleListOfFileNames" style="display: none;">
-			<ul>
-				<?php foreach (glob("gripBases/*.stl")as $fileName): ?>
-					<li class = "invisibleFileName"> <?php echo "$fileName" ?></li>
-				<?php endforeach; ?>
-			</ul>
+				<div class = "invisibleListOfFileNames" style="display: none;">
+					<ul>
+						<!-- Create a list of all the file names, invisible to viewer -->
+						<?php foreach (glob("gripBases/*.stl")as $fileName): ?>
+						<li class = "invisibleFileName"> <?php echo "$fileName"; ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
 		</div>
-
 		<script>
-			var numFiles = document.getElementById("numFiles").textContent;
 
+			//Collect the list of file names and put them into buttons, display on screen
+			var numFiles = document.getElementById("numFiles").textContent;
 			for(count = 0; count < numFiles; count++)
 			{
 				var btn = document.createElement("BUTTON");
 			    var t = document.createTextNode($(".invisibleFileName:eq("+count+")").text());
 			    btn.appendChild(t);
+			    btn.className = "btn btn-default btn-lg dropdown-toggle";
 			    document.body.appendChild(btn);
 			}
 		</script>

@@ -1,5 +1,7 @@
 <html lang="en">
+<!--
 
+-->
 <head>
 	<meta charset="utf-8">
 	<title>GripFab</title>
@@ -7,6 +9,8 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 	
 </head>
 
@@ -26,52 +30,24 @@
 	    	<!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-				    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+				    <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+				    <li class = "nav-separator"><a href="#"> / </a><li>
+				    <li class="active"><a href="#">Add Base to Repository <span class="sr-only">(current)</span></a></li>
 	      		  </ul>
 	     		</div><!-- /.navbar-collapse -->
 	  		</div><!-- /.container-fluid -->
 		</nav>
+		<div class = "container">
 
-		<div class="btn-group">
-		  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Create a New Grip <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu">
-		    <li><a href="createNewGrip.php">Use a pre-existing base</a></li>
-		    <li><a href="addBaseToRepo.php">Download a new base</a></li>
-		  </ul>
+
+			<form action="uploads.php" method="post" enctype="multipart/form-data">
+			    Select file to upload:
+			    <input type="file" name="fileToUpload" id="fileToUpload">
+			    <input type="submit" value="Upload Base Grip" name="submit">
+			</form>
+
+
+
 		</div>
-
-		<div class="btn-group">
-		  <button class="btn btn-default btn-lg" type="button" data-toggle="dropdown">
-		    <a href="addBaseToRepo.php">Add Grip Base to Repository </a>
-		  </button>
-		</div>
-
-		<div class="btn-group">
-		  <button class="btn btn-default btn-lg" type="button" data-toggle="dropdown">
-		    Add Grip to Repository
-		  </button>
-		</div>
-
-		<div class="btn-group">
-		  <button class="btn btn-default btn-lg" type="button" data-toggle="dropdown">
-		    Download Pre-Existing Grip
-		  </button>
-		</div>
- 		
- 		<!--<button type="button" class="btn btn-default btn-lg">
-  			 Get pre-existing Grip
-		</button>-->
- 	
-	    
-		<footer>
-
-		</footer>
 	</body>
-
-<script type="text/javascript">
-
-</script>
-
-</html> 
+</hmtl>
