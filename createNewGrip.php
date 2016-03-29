@@ -72,13 +72,18 @@ This page allows users to choose a base from the pre-existing list of base optio
 					</ul>
 				</div>
 			<h2> Choose a Grip Base from the Repository. </h2>
+
+			<!--Create Grip Buttons-->
 			<script type="text/javascript" src="createNewGrip.js"></script>
 			<script> createRepoButtons(); </script>
+			<!--From Here We Should Have Visual Screen Shots of Each Base with the Buttons -->
+			<!-- Possibly a bunch of mini API screen shots? -->
+
+			<script> createHyperlinks(); </script> 
+
 		</div>
 		
-		<!--From Here We Should Have Visual Screen Shots of Each Base with the Buttons -->
-		<!-- Possibly a bunch of mini API screen shots? -->
-
+		
 
 		<footer>
 
