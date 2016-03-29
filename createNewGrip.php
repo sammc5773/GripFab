@@ -42,6 +42,7 @@ This page allows users to choose a base from the pre-existing list of base optio
 		</nav>
 		<!--Main body-->
 		<div class = "container">
+			<!--currently displays nothing --> 
 				<div id = "numFiles" style="display: none;">
 					<?php 
 						
@@ -70,21 +71,13 @@ This page allows users to choose a base from the pre-existing list of base optio
 						<?php endforeach; ?>
 					</ul>
 				</div>
+			<h2> Choose a Grip Base from the Repository. </h2>
+			<script type="text/javascript" src="createNewGrip.js"></script>
+			<script> createRepoButtons(); </script>
 		</div>
-		<script>
-
-			//Collect the list of file names and put them into buttons, display on screen
-			var numFiles = document.getElementById("numFiles").textContent;
-			for(count = 0; count < numFiles; count++)
-			{
-				var btn = document.createElement("BUTTON");
-			    var t = document.createTextNode($(".invisibleFileName:eq("+count+")").text());
-			    btn.appendChild(t);
-			    btn.className = "btn btn-default btn-lg dropdown-toggle";
-			    document.body.appendChild(btn);
-			}
-		</script>
 		
+		<!--From Here We Should Have Visual Screen Shots of Each Base with the Buttons -->
+		<!-- Possibly a bunch of mini API screen shots? -->
 
 
 		<footer>
