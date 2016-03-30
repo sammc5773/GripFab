@@ -19,6 +19,7 @@ This page allows users to choose a base from the pre-existing list of base optio
 
 	<body>
  		<nav class="navbar navbar-inverse">
+
   			<div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
@@ -30,16 +31,20 @@ This page allows users to choose a base from the pre-existing list of base optio
 			      </button>
 			      <a class="navbar-brand" href="#">GripFab</a>
 	    		</div>
+
 	    	<!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
 				    <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
 				    <li class = "nav-separator"><a href="#"> / </a><li>
-				    <li class="active"><a href="#">Create New Grip <span class="sr-only">(current)</span></a></li>
+				    <li><a href="#">Create New Grip</a></li>
+				    <li class = "nav-separator"><a href="#"> / </a><li>
+				    <li class="active"><a href="#">Choose Grip Base <span class="sr-only">(current)</span></a></li>
 	      		  </ul>
 	     		</div><!-- /.navbar-collapse -->
 	  		</div><!-- /.container-fluid -->
 		</nav>
+
 		<!--Main body-->
 		<div class = "container">
 			<!--currently displays nothing --> 
@@ -71,16 +76,19 @@ This page allows users to choose a base from the pre-existing list of base optio
 						<?php endforeach; ?>
 					</ul>
 				</div>
+			
 			<h2> Choose a Grip Base from the Repository. </h2>
 
 			<!--Create Grip Buttons-->
-			<script type="text/javascript" src="createNewGrip.js"></script>
-			<script> createRepoButtons(); </script>
+			<div id = "buttonArea">
+				<script type="text/javascript" src="chooseGripBase.js"></script>
+				<script> createRepoButtons(); /*createOnClicks();*/ </script>
+			</div>
+
+			<a href = "chooseGripBarrel.php"><button class="btn btn-default btn-lg" style = "margin:50px;"> Submit</button></a>
+			
 			<!--From Here We Should Have Visual Screen Shots of Each Base with the Buttons -->
 			<!-- Possibly a bunch of mini API screen shots? -->
-
-			<script> createHyperlinks(); </script> 
-
 		</div>
 		
 		
